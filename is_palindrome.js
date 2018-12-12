@@ -17,3 +17,21 @@
 // Follow up:
 
 // Coud you solve it without converting the integer to a string ?
+
+
+// without integer to string conversion and vice versa
+var isPalindrome = function (x) {
+    if (x < 0) {
+        return false;
+    } else if (x === 0) {
+        return true;
+    } else {
+        let arr = [];
+        let num = x;
+        while (num > 0) {
+            arr.push(num % 10);
+            num = Math.floor(num / 10);
+        }
+        return x === parseInt(arr.join(''));
+    }
+};
